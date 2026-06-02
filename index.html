@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Krisis Pencemaran Sungai Cisadane &amp; Cileungsi — Presentasi Kelompok</title>
+<title>Perubahan Sosial — Tiga Studi Kasus</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,14 +13,13 @@
 
 <style>
 :root{
-  --ink:#06100f;
-  --bone:#eef4f2;
-  --toxic:#3df5a8;
-  --sludge:#1c2b27;
-  --ocean:#1e6b6b;
-  --algae:#5c8c6e;
-  --warn:#f5c542;
-  --rust:#a8451f;
+  --ink:#0a0f1a;
+  --bone:#f0ece2;
+  --accent:#e8b04a;
+  --ocean:#2a6b8c;
+  --sage:#7a9c6e;
+  --coral:#d96c52;
+  --plum:#6b4575;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -74,7 +73,7 @@ html,body{
   font-size:11px;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:rgba(238,244,242,.55);
+  color:rgba(240,236,226,.55);
 }
 .hud-tl{top:24px;left:32px}
 .hud-tr{top:24px;right:32px;text-align:right}
@@ -86,26 +85,26 @@ html,body{
   font-style:italic;
   font-weight:400;
   font-size:34px;
-  color:var(--toxic);
+  color:var(--accent);
   margin-right:6px;
   vertical-align:-3px;
 }
 .progress{display:flex;gap:6px;margin-top:6px}
 .progress span{
-  width:18px;height:2px;
-  background:rgba(238,244,242,.2);
+  width:20px;height:2px;
+  background:rgba(240,236,226,.2);
   transition:background .4s, width .4s;
 }
-.progress span.done{background:rgba(238,244,242,.55)}
-.progress span.now{background:var(--toxic);width:42px}
+.progress span.done{background:rgba(240,236,226,.55)}
+.progress span.now{background:var(--accent);width:44px}
 
 .eyebrow{
   font-family:'JetBrains Mono',monospace;
   font-size:11px;
   letter-spacing:.3em;
   text-transform:uppercase;
-  color:var(--toxic);
-  margin-bottom:24px;
+  color:var(--accent);
+  margin-bottom:22px;
   display:flex;
   align-items:center;
   gap:14px;
@@ -113,7 +112,7 @@ html,body{
 .eyebrow::before{
   content:"";
   width:38px;height:1px;
-  background:var(--toxic);
+  background:var(--accent);
 }
 
 .title-xl{
@@ -127,194 +126,28 @@ html,body{
   font-family:'Instrument Serif',serif;
   font-style:italic;
   font-weight:400;
-  color:var(--toxic);
+  color:var(--accent);
 }
 .title-lg{
   font-family:'Fraunces',serif;
   font-weight:300;
-  font-size:clamp(32px, 4.4vw, 60px);
-  line-height:1.04;
+  font-size:clamp(34px, 4.6vw, 64px);
+  line-height:1.02;
   letter-spacing:-.025em;
-  margin-bottom:24px;
+  margin-bottom:20px;
 }
 .title-lg em{
   font-family:'Instrument Serif',serif;
   font-style:italic;
-  color:var(--toxic);
-}
-
-.body{
-  font-family:'Fraunces',serif;
-  font-weight:350;
-  font-size:clamp(14.5px, 1.05vw, 17px);
-  line-height:1.55;
-  max-width:62ch;
-  color:rgba(238,244,242,.88);
-}
-.body strong{color:var(--bone);font-weight:600}
-
-.speaker{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  margin-top:28px;
-  padding:14px 20px;
-  background:rgba(238,244,242,.04);
-  border:1px solid rgba(238,244,242,.12);
-  border-left:3px solid var(--toxic);
-  backdrop-filter:blur(12px);
-  max-width:480px;
-}
-.speaker .avatar{
-  width:48px;height:48px;
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Instrument Serif',serif;
-  font-style:italic;
-  font-size:24px;
-  color:var(--ink);
-  flex-shrink:0;
-}
-.speaker .meta{
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:rgba(238,244,242,.55);
-}
-.speaker .meta b{
-  display:block;
-  font-family:'Fraunces',serif;
-  font-weight:500;
-  font-size:14.5px;
-  letter-spacing:0;
-  text-transform:none;
-  color:var(--bone);
-  margin-bottom:2px;
-}
-
-.dialog{
-  position:relative;
-  font-family:'Instrument Serif',serif;
-  font-size:clamp(18px, 1.7vw, 24px);
-  font-style:italic;
-  line-height:1.4;
-  padding:18px 0 18px 30px;
-  border-left:2px solid var(--toxic);
-  max-width:56ch;
-  margin-top:18px;
-}
-.dialog::before{
-  content:"";
-  position:absolute;
-  left:-7px;top:22px;
-  width:12px;height:12px;
-  background:var(--toxic);
-  border-radius:50%;
-  box-shadow:0 0 0 6px rgba(61,245,168,.18);
+  color:var(--accent);
 }
 
 .split{
   display:grid;
-  grid-template-columns:1.1fr 1fr;
+  grid-template-columns:1.05fr 1fr;
   gap:60px;
   align-items:center;
 }
-.split-3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin-top:36px;
-}
-
-.card{
-  padding:22px;
-  background:rgba(238,244,242,.04);
-  border:1px solid rgba(238,244,242,.12);
-  backdrop-filter:blur(10px);
-  position:relative;
-  overflow:hidden;
-}
-.card::before{
-  content:attr(data-num);
-  position:absolute;
-  top:12px;right:16px;
-  font-family:'Instrument Serif',serif;
-  font-style:italic;
-  font-size:38px;
-  color:var(--toxic);
-  opacity:.4;
-  line-height:1;
-}
-.card h4{
-  font-family:'Fraunces',serif;
-  font-weight:500;
-  font-size:20px;
-  margin-bottom:12px;
-  letter-spacing:-.01em;
-  padding-right:40px;
-}
-.card p{
-  font-family:'Fraunces',serif;
-  font-weight:350;
-  font-size:14px;
-  line-height:1.55;
-  color:rgba(238,244,242,.78);
-}
-
-.steps{display:flex;flex-direction:column;gap:14px;margin-top:24px}
-.step{display:flex;gap:20px;align-items:flex-start}
-.step-num{
-  font-family:'Instrument Serif',serif;
-  font-style:italic;
-  font-size:42px;
-  color:var(--toxic);
-  line-height:1;
-  flex-shrink:0;
-  min-width:54px;
-}
-.step-body h5{
-  font-family:'Fraunces',serif;
-  font-weight:500;
-  font-size:18px;
-  margin-bottom:4px;
-}
-.step-body p{
-  font-family:'Fraunces',serif;
-  font-weight:350;
-  font-size:13.5px;
-  line-height:1.5;
-  color:rgba(238,244,242,.78);
-  max-width:46ch;
-}
-
-.compare{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  margin-top:24px;
-  background:rgba(238,244,242,.03);
-  border:1px solid rgba(238,244,242,.12);
-}
-.compare > div{
-  padding:14px 18px;
-  border-bottom:1px solid rgba(238,244,242,.08);
-  border-right:1px solid rgba(238,244,242,.08);
-  font-family:'Fraunces',serif;
-  font-size:13.5px;
-  line-height:1.4;
-}
-.compare > div:nth-child(3n){border-right:none}
-.compare > div:nth-last-child(-n+3){border-bottom:none}
-.compare .h{
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  color:rgba(238,244,242,.55);
-  background:rgba(238,244,242,.04);
-}
-.compare .akut{color:var(--warn)}
-.compare .kronis{color:var(--rust)}
 
 .slide-num{
   font-family:'Instrument Serif',serif;
@@ -323,48 +156,153 @@ html,body{
   position:absolute;
   right:-20px;
   bottom:-60px;
-  color:rgba(238,244,242,.04);
+  color:rgba(240,236,226,.04);
   line-height:.8;
   pointer-events:none;
   user-select:none;
 }
 
-.tag{
-  display:inline-block;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  padding:5px 12px;
-  border:1px solid rgba(238,244,242,.25);
-  border-radius:20px;
-  color:rgba(238,244,242,.7);
-  margin-right:6px;
-  margin-bottom:6px;
-}
-.tag.toxic{border-color:var(--toxic);color:var(--toxic)}
-
-.stat-row{
+/* Change list */
+.change-list{
   display:flex;
-  gap:40px;
-  margin-top:28px;
-  flex-wrap:wrap;
+  flex-direction:column;
+  gap:14px;
+  margin-top:8px;
 }
-.stat{min-width:120px}
-.stat .num{
+.change-item{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  padding:14px 18px;
+  background:rgba(240,236,226,.04);
+  border:1px solid rgba(240,236,226,.12);
+  border-left:3px solid var(--accent);
+  font-family:'Fraunces',serif;
+  font-size:clamp(15px, 1.15vw, 18px);
+  line-height:1.4;
+}
+.change-item .arrow{
   font-family:'Instrument Serif',serif;
   font-style:italic;
-  font-size:clamp(38px,4vw,56px);
-  color:var(--toxic);
+  color:var(--accent);
+  font-size:22px;
   line-height:1;
+  flex-shrink:0;
 }
-.stat .lbl{
+.change-item.plus{border-left-color:var(--sage)}
+.change-item.plus .arrow{color:var(--sage)}
+.change-item.minus{border-left-color:var(--coral)}
+.change-item.minus .arrow{color:var(--coral)}
+
+/* Theory chip */
+.theory-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:22px;
+}
+.theory{
+  display:inline-block;
   font-family:'JetBrains Mono',monospace;
-  font-size:10px;
+  font-size:11px;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:rgba(238,244,242,.55);
-  margin-top:8px;
+  padding:8px 16px;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  border-radius:22px;
+}
+.theory.alt{border-color:var(--ocean);color:#7ab8d4}
+
+/* Section sub-heading */
+.sub-h{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:rgba(240,236,226,.55);
+  margin:24px 0 12px;
+}
+
+/* Components table — only on analysis slides */
+.components{
+  display:grid;
+  grid-template-columns:1fr 1.6fr;
+  margin-top:12px;
+  background:rgba(240,236,226,.03);
+  border:1px solid rgba(240,236,226,.12);
+}
+.components > div{
+  padding:16px 22px;
+  border-bottom:1px solid rgba(240,236,226,.08);
+  border-right:1px solid rgba(240,236,226,.08);
+  font-family:'Fraunces',serif;
+  font-size:clamp(15px, 1.1vw, 17px);
+  line-height:1.35;
+}
+.components > div:nth-child(2n){border-right:none}
+.components > div:nth-last-child(-n+2){border-bottom:none}
+.components .h{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:var(--accent);
+  background:rgba(232,176,74,.06);
+}
+
+.insight{
+  position:relative;
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(20px, 2vw, 28px);
+  font-style:italic;
+  line-height:1.4;
+  padding:18px 0 18px 28px;
+  border-left:2px solid var(--accent);
+  margin-top:28px;
+  max-width:62ch;
+}
+.insight::before{
+  content:"";
+  position:absolute;
+  left:-7px;top:24px;
+  width:12px;height:12px;
+  background:var(--accent);
+  border-radius:50%;
+  box-shadow:0 0 0 6px rgba(232,176,74,.18);
+}
+
+/* Comparison table — closing slide */
+.compare{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  margin-top:24px;
+  background:rgba(240,236,226,.03);
+  border:1px solid rgba(240,236,226,.12);
+}
+.compare > div{
+  padding:18px 22px;
+  border-bottom:1px solid rgba(240,236,226,.08);
+  border-right:1px solid rgba(240,236,226,.08);
+  font-family:'Fraunces',serif;
+  font-size:15px;
+  line-height:1.4;
+}
+.compare > div:nth-child(3n){border-right:none}
+.compare > div:nth-last-child(-n+3){border-bottom:none}
+.compare .h{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:var(--accent);
+  background:rgba(232,176,74,.06);
+}
+.compare .case-name{
+  font-family:'Instrument Serif',serif;
+  font-style:italic;
+  font-size:22px;
+  color:var(--bone);
 }
 
 .visual-panel{
@@ -374,8 +312,8 @@ html,body{
 }
 .illustration{
   width:100%;
-  max-width:440px;
-  filter:drop-shadow(0 24px 60px rgba(61,245,168,.15));
+  max-width:420px;
+  filter:drop-shadow(0 24px 60px rgba(232,176,74,.15));
 }
 
 .reveal{
@@ -396,53 +334,77 @@ html,body{
   0%,100%{transform:translateY(0) rotate(0)}
   50%{transform:translateY(-12px) rotate(2deg)}
 }
-@keyframes pulse{
-  0%,100%{opacity:.6;transform:scale(1)}
-  50%{opacity:1;transform:scale(1.05)}
-}
-@keyframes drip{
-  0%{transform:translateY(0);opacity:1}
-  80%{opacity:1}
-  100%{transform:translateY(40px);opacity:0}
-}
 .float-anim{animation:float 6s ease-in-out infinite}
-.pulse-anim{animation:pulse 3s ease-in-out infinite}
 
 .subtitle-row{
   display:flex;
   align-items:center;
   gap:24px;
-  margin-top:40px;
+  margin-top:36px;
   font-family:'JetBrains Mono',monospace;
   font-size:11px;
   letter-spacing:.25em;
   text-transform:uppercase;
-  color:rgba(238,244,242,.55);
+  color:rgba(240,236,226,.55);
 }
 .subtitle-row .line{
   flex:1;height:1px;
-  background:linear-gradient(to right, rgba(238,244,242,.3), transparent);
+  background:linear-gradient(to right, rgba(240,236,226,.3), transparent);
   max-width:200px;
 }
 
-.authors-grid{
-  margin-top:48px;
-  display:grid;
-  grid-template-columns:repeat(3, max-content);
-  gap:14px 44px;
+.cover-body{
   font-family:'Fraunces',serif;
-  font-size:13.5px;
-  color:rgba(238,244,242,.75);
+  font-weight:350;
+  font-size:clamp(16px,1.2vw,19px);
+  line-height:1.55;
+  max-width:58ch;
+  color:rgba(240,236,226,.85);
+  margin-top:28px;
 }
-.authors-grid div{display:flex;align-items:center;gap:10px}
-.authors-grid .dot{
-  width:6px;height:6px;
-  border-radius:50%;
-  background:var(--toxic);
+
+.case-track{
+  margin-top:44px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  max-width:760px;
+}
+.track-card{
+  padding:18px 20px;
+  background:rgba(240,236,226,.04);
+  border:1px solid rgba(240,236,226,.12);
+  border-top:3px solid var(--accent);
+}
+.track-card:nth-child(2){border-top-color:var(--sage)}
+.track-card:nth-child(3){border-top-color:var(--coral)}
+.track-card .case-no{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:rgba(240,236,226,.5);
+  margin-bottom:8px;
+}
+.track-card .case-title{
+  font-family:'Instrument Serif',serif;
+  font-style:italic;
+  font-size:22px;
+  line-height:1.15;
+  color:var(--bone);
+}
+.track-card .case-tag{
+  display:inline-block;
+  margin-top:10px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
 }
 
 .signature{
-  margin-top:36px;
+  margin-top:32px;
   display:flex;
   align-items:center;
   gap:14px;
@@ -450,7 +412,7 @@ html,body{
   font-size:10px;
   letter-spacing:.3em;
   text-transform:uppercase;
-  color:rgba(238,244,242,.4);
+  color:rgba(240,236,226,.4);
 }
 
 .scroll-hint{
@@ -463,7 +425,7 @@ html,body{
   font-size:10px;
   letter-spacing:.3em;
   text-transform:uppercase;
-  color:rgba(238,244,242,.5);
+  color:rgba(240,236,226,.5);
   display:flex;
   align-items:center;
   gap:10px;
@@ -498,17 +460,17 @@ html,body{
   font-size:11px;
   letter-spacing:.3em;
   text-transform:uppercase;
-  color:rgba(238,244,242,.5);
+  color:rgba(240,236,226,.5);
 }
 .loader-bar{
   width:160px;height:1px;
-  background:rgba(238,244,242,.15);
+  background:rgba(240,236,226,.15);
   overflow:hidden;
 }
 .loader-bar span{
   display:block;
   width:30%;height:100%;
-  background:var(--toxic);
+  background:var(--accent);
   animation:loadbar 1.2s ease-in-out infinite;
 }
 @keyframes loadbar{
@@ -516,22 +478,13 @@ html,body{
   100%{transform:translateX(400%)}
 }
 
-.av-1{background:#3df5a8}
-.av-2{background:#f5c542;color:#06100f!important}
-.av-3{background:#5c8c6e}
-.av-4{background:#1e6b6b;color:#eef4f2!important}
-.av-5{background:#a8451f;color:#eef4f2!important}
-.av-6{background:#6fc2a0}
-.av-7{background:#8cb487}
-.av-8{background:#e0c97c;color:#06100f!important}
-.av-9{background:#2f7d5b;color:#eef4f2!important}
-
-@media (max-height:760px){
-  .slide{padding:5vh 7vw}
-  .title-xl{font-size:clamp(34px, 5vw, 68px)}
-  .title-lg{font-size:clamp(26px, 3.6vw, 48px)}
-  .speaker{margin-top:18px;padding:10px 16px}
-  .dialog{padding:12px 0 12px 24px;margin-top:14px}
+@media (max-height:780px){
+  .slide{padding:5vh 6vw}
+  .title-xl{font-size:clamp(34px,5vw,68px)}
+  .title-lg{font-size:clamp(28px,3.8vw,48px)}
+  .change-item{padding:10px 14px;font-size:15px}
+  .insight{padding:12px 0 12px 24px;margin-top:20px}
+  .components > div{padding:12px 18px}
 }
 </style>
 </head>
@@ -546,22 +499,22 @@ html,body{
 </div>
 
 <div class="hud hud-tl">
-  <div>Kelompok · 9 Presenter</div>
-  <div style="margin-top:4px;color:rgba(238,244,242,.4)">Studi Kasus Lingkungan</div>
+  <div>Sosiologi · Perubahan Sosial</div>
+  <div style="margin-top:4px;color:rgba(240,236,226,.4)">3 Studi Kasus</div>
 </div>
 
 <div class="hud hud-tr">
-  <div class="counter"><b id="cur">01</b>/ 09</div>
+  <div class="counter"><b id="cur">01</b>/ 07</div>
   <div class="progress" id="prog">
     <span></span><span></span><span></span>
     <span></span><span></span><span></span>
-    <span></span><span></span><span></span>
+    <span></span>
   </div>
 </div>
 
 <div class="hud hud-bl">
-  <div>Cisadane &amp; Cileungsi</div>
-  <div style="margin-top:4px;color:rgba(238,244,242,.4)">Pencemaran Akut &amp; Kronis</div>
+  <div>Juwana · Pulau Pari · COVID-19</div>
+  <div style="margin-top:4px;color:rgba(240,236,226,.4)">5 Komponen Perubahan</div>
 </div>
 
 <div class="scroll-hint" id="scrollHint">
@@ -569,455 +522,325 @@ html,body{
   <span class="arrow">↓</span>
 </div>
 
-<!-- SLIDE 1 — COVER -->
+<!-- ============ SLIDE 1: KASUS 1 — JUWANA (Penjelasan) ============ -->
 <section class="slide" id="slide-1">
   <div class="slide-num">01</div>
-  <div class="eyebrow reveal">Presentasi Kelompok · 9 Pembicara</div>
-  <h1 class="title-xl reveal">
-    Krisis Pencemaran<br>
-    Sungai <em>Cisadane</em><br>
-    &amp; Cileungsi.
-  </h1>
-  <div class="subtitle-row reveal">
-    <span class="line"></span>
-    <span>Akut vs Kronis · Bogor – Tangerang – Bekasi</span>
-    <span class="line"></span>
-  </div>
-  <div class="body reveal" style="margin-top:28px;max-width:56ch">
-    Satu sungai keracunan dalam semalam, satu lagi sekarat pelan-pelan
-    bertahun-tahun. Sembilan suara membedah fenomena, dampak ekologis-sosial,
-    dan langkah penanganan yang sedang berjalan — supaya isu ini nggak cuma
-    jadi headline yang ke-skip di FYP.
-  </div>
-  <div class="authors-grid reveal">
-    <div><span class="dot"></span> 01 · Pembuka</div>
-    <div><span class="dot"></span> 02 · Konteks Sungai</div>
-    <div><span class="dot"></span> 03 · Cisadane (Akut)</div>
-    <div><span class="dot"></span> 04 · Cileungsi (Kronis)</div>
-    <div><span class="dot"></span> 05 · Dampak Ekologis</div>
-    <div><span class="dot"></span> 06 · Dampak Sosial</div>
-    <div><span class="dot"></span> 07 · Respons Darurat</div>
-    <div><span class="dot"></span> 08 · Penegakan Hukum</div>
-    <div><span class="dot"></span> 09 · Sintesis &amp; Penutup</div>
-  </div>
-</section>
-
-<!-- SLIDE 2 — PEMBUKA -->
-<section class="slide" id="slide-2">
-  <div class="slide-num">02</div>
   <div class="split">
     <div>
-      <div class="eyebrow reveal">Prof. Nada · Pembuka</div>
-      <h2 class="title-lg reveal">Dua sungai, dua <em>jenis luka</em>.</h2>
-      <p class="body reveal">
-        Selamat datang. Hari ini kita bahas isu yang sebenarnya literally
-        ngalir di sekitar kita: aliran sungai yang melintasi Bogor sampai
-        Tangerang dan Bekasi mengalami penurunan kualitas yang ekstrem.
-        Frame-nya satu — <strong>pencemaran akut versus kronis</strong> — tapi dampaknya
-        sama-sama serius buat ekosistem dan jutaan warga.
-      </p>
-      <div class="dialog reveal">
-        "Sungai itu kayak rekening bersama satu kota. Sekali ada yang
-        nyampah, semua orang di hilir yang kena tagihannya."
+      <div class="eyebrow reveal">Studi Kasus 1 · Juwana, Pati</div>
+      <h2 class="title-lg reveal">Teknologi, Nelayan,<br>&amp; <em>Tatanan Sosial Baru</em>.</h2>
+
+      <div class="sub-h reveal">Perubahan yang Terjadi</div>
+      <div class="change-list reveal">
+        <div class="change-item"><span class="arrow">→</span><span>Perahu layar &nbsp;→&nbsp; kapal modern (&gt;30 GT)</span></div>
+        <div class="change-item"><span class="arrow">→</span><span>Muncul spesialisasi kerja: nahkoda, motoris, ABK, juru masak</span></div>
+        <div class="change-item"><span class="arrow">→</span><span>Stratifikasi baru: pemilik modal vs pekerja</span></div>
       </div>
-      <div class="speaker reveal">
-        <div class="avatar av-1">A</div>
-        <div class="meta">
-          <b>Prof Nada</b>
-          Moderator · membuka diskusi
-        </div>
+
+      <div class="theory-row reveal">
+        <span class="theory">Materialisme Historis · Karl Marx</span>
       </div>
     </div>
+
     <div class="visual-panel reveal">
       <svg class="illustration float-anim" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="g1" cx="50%" cy="50%">
-            <stop offset="0%" stop-color="#3df5a8" stop-opacity=".35"/>
-            <stop offset="100%" stop-color="#3df5a8" stop-opacity="0"/>
-          </radialGradient>
+          <linearGradient id="sea1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2a6b8c"/>
+            <stop offset="100%" stop-color="#0e3045"/>
+          </linearGradient>
         </defs>
-        <circle cx="200" cy="200" r="180" fill="url(#g1)"/>
-        <path d="M70,80 Q140,160 110,240 Q90,300 150,360" stroke="#3df5a8" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/>
-        <path d="M330,80 Q260,160 290,240 Q310,300 250,360" stroke="#a8451f" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/>
-        <text x="90" y="60" text-anchor="middle" fill="#3df5a8" font-family="Instrument Serif" font-style="italic" font-size="14">akut</text>
-        <text x="310" y="60" text-anchor="middle" fill="#a8451f" font-family="Instrument Serif" font-style="italic" font-size="14">kronis</text>
-        <circle cx="200" cy="370" r="10" fill="#f5c542"/>
-        <text x="200" y="396" text-anchor="middle" fill="#eef4f2" font-family="JetBrains Mono" font-size="10">HILIR · WARGA</text>
+        <rect x="0" y="230" width="400" height="170" fill="url(#sea1)"/>
+        <!-- old sail boat (small, left) -->
+        <g opacity=".55">
+          <path d="M40,220 L100,220 L92,240 L48,240 Z" fill="#a08060"/>
+          <line x1="70" y1="220" x2="70" y2="170" stroke="#a08060" stroke-width="2"/>
+          <path d="M70,170 L90,210 L70,210 Z" fill="#f0ece2" opacity=".7"/>
+        </g>
+        <text x="65" y="260" text-anchor="middle" fill="rgba(240,236,226,.5)" font-family="JetBrains Mono" font-size="9">DULU</text>
+        <!-- arrow -->
+        <path d="M130,200 L170,200" stroke="#e8b04a" stroke-width="2"/>
+        <polygon points="170,200 162,196 162,204" fill="#e8b04a"/>
+        <!-- modern fishing vessel -->
+        <g>
+          <path d="M190,235 L350,235 L335,265 L205,265 Z" fill="#e8b04a"/>
+          <rect x="225" y="195" width="60" height="40" fill="#f0ece2"/>
+          <rect x="240" y="205" width="12" height="12" fill="#2a6b8c"/>
+          <rect x="262" y="205" width="12" height="12" fill="#2a6b8c"/>
+          <line x1="295" y1="195" x2="295" y2="155" stroke="#f0ece2" stroke-width="2"/>
+          <rect x="285" y="155" width="20" height="6" fill="#d96c52"/>
+          <!-- crew dots -->
+          <circle cx="215" cy="225" r="4" fill="#0a0f1a"/>
+          <circle cx="335" cy="225" r="4" fill="#0a0f1a"/>
+        </g>
+        <text x="270" y="290" text-anchor="middle" fill="#e8b04a" font-family="JetBrains Mono" font-size="9">SEKARANG · &gt;30 GT</text>
+        <!-- waves -->
+        <g stroke="#f0ece2" stroke-width="1" fill="none" opacity=".25">
+          <path d="M20,310 Q60,300 100,310 T180,310 T260,310 T340,310 T400,310"/>
+          <path d="M20,340 Q60,330 100,340 T180,340 T260,340 T340,340 T400,340"/>
+        </g>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 3 — KONTEKS -->
+<!-- ============ SLIDE 2: KASUS 1 — JUWANA (5 Komponen) ============ -->
+<section class="slide" id="slide-2">
+  <div class="slide-num">02</div>
+  <div class="eyebrow reveal">Analisis · 5 Komponen Perubahan Sosial</div>
+  <h2 class="title-lg reveal"><em>Juwana</em> — modernisasi yang mengubah struktur.</h2>
+
+  <div class="components reveal">
+    <div class="h">Komponen</div>
+    <div class="h">Analisis</div>
+
+    <div>Identitas</div>
+    <div>Modernisasi teknologi perikanan</div>
+
+    <div>Level</div>
+    <div>Komunitas nelayan &amp; ekonomi lokal</div>
+
+    <div>Durasi</div>
+    <div>Jangka panjang (1990-an – sekarang)</div>
+
+    <div>Besaran</div>
+    <div>Transformasional — mengubah struktur kerja &amp; stratifikasi</div>
+
+    <div>Kecepatan</div>
+    <div>Cepat — teknologi langsung mengubah produksi</div>
+  </div>
+
+  <div class="insight reveal">
+    "Teknologi tidak hanya mengubah cara menangkap ikan, tetapi juga
+    mengubah <em>struktur sosial</em> masyarakat."
+  </div>
+</section>
+
+<!-- ============ SLIDE 3: KASUS 2 — PULAU PARI (Penjelasan) ============ -->
 <section class="slide" id="slide-3">
   <div class="slide-num">03</div>
   <div class="split">
     <div class="visual-panel reveal">
       <svg class="illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-        <rect x="40" y="40" width="320" height="320" rx="12" fill="rgba(238,244,242,.03)" stroke="rgba(238,244,242,.15)"/>
-        <text x="200" y="32" text-anchor="middle" fill="rgba(238,244,242,.5)" font-family="JetBrains Mono" font-size="10">PETA ALIRAN (SKEMATIK)</text>
-        <circle cx="110" cy="90" r="7" fill="#f5c542"/>
-        <text x="124" y="94" fill="#eef4f2" font-family="JetBrains Mono" font-size="11">BOGOR (hulu)</text>
-        <path d="M110,90 Q150,180 130,280 Q120,330 170,360" stroke="#3df5a8" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <text x="60" y="200" fill="#3df5a8" font-family="Instrument Serif" font-style="italic" font-size="13" transform="rotate(-12 60 200)">Cisadane</text>
-        <path d="M250,80 Q230,180 270,270 Q290,330 250,360" stroke="#a8451f" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <text x="285" y="190" fill="#a8451f" font-family="Instrument Serif" font-style="italic" font-size="13" transform="rotate(14 285 190)">Cileungsi</text>
-        <circle cx="170" cy="360" r="7" fill="#1e6b6b"/>
-        <text x="184" y="364" fill="#eef4f2" font-family="JetBrains Mono" font-size="10">TANGERANG</text>
-        <circle cx="250" cy="360" r="7" fill="#1e6b6b"/>
-        <text x="264" y="382" fill="#eef4f2" font-family="JetBrains Mono" font-size="10">BEKASI</text>
+        <defs>
+          <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#e8b04a" stop-opacity=".4"/>
+            <stop offset="100%" stop-color="#e8b04a" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="400" height="240" fill="url(#sky2)"/>
+        <!-- sun -->
+        <circle cx="320" cy="80" r="28" fill="#e8b04a" opacity=".9"/>
+        <!-- water -->
+        <rect x="0" y="240" width="400" height="160" fill="#2a6b8c" opacity=".6"/>
+        <!-- island -->
+        <ellipse cx="200" cy="240" rx="160" ry="22" fill="#d4b890"/>
+        <!-- palm trees -->
+        <g>
+          <line x1="120" y1="240" x2="115" y2="180" stroke="#6b4525" stroke-width="3"/>
+          <path d="M115,180 Q95,170 80,180 M115,180 Q135,170 150,180 M115,180 Q110,160 100,150 M115,180 Q120,160 130,150" stroke="#7a9c6e" stroke-width="3" fill="none"/>
+        </g>
+        <g>
+          <line x1="280" y1="240" x2="285" y2="170" stroke="#6b4525" stroke-width="3"/>
+          <path d="M285,170 Q265,160 250,170 M285,170 Q305,160 320,170 M285,170 Q280,150 270,140 M285,170 Q290,150 300,140" stroke="#7a9c6e" stroke-width="3" fill="none"/>
+        </g>
+        <!-- homestay -->
+        <rect x="170" y="190" width="60" height="48" fill="#f0ece2"/>
+        <polygon points="165,190 200,165 235,190" fill="#d96c52"/>
+        <rect x="190" y="210" width="20" height="28" fill="#6b4525"/>
+        <!-- boats -->
+        <g fill="#f0ece2">
+          <path d="M30,300 L80,300 L72,315 L38,315 Z"/>
+          <path d="M310,320 L370,320 L362,335 L318,335 Z"/>
+        </g>
+        <text x="200" y="380" text-anchor="middle" fill="rgba(240,236,226,.6)" font-family="JetBrains Mono" font-size="10">PULAU PARI · WISATA</text>
       </svg>
     </div>
+
     <div>
-      <div class="eyebrow reveal">Prof. Tiur · Konteks Sungai</div>
-      <h2 class="title-lg reveal">Satu aliran, <em>jutaan</em> orang bergantung.</h2>
-      <p class="body reveal">
-        Sungai Cisadane dan Cileungsi adalah urat nadi air baku untuk
-        kawasan padat Bogor–Tangerang–Bekasi. Dari air ini PDAM mengolah air
-        bersih, petani mengairi sawah, dan ekosistem akuatik hidup. Begitu
-        kualitasnya jatuh, efek dominonya panjang banget ke hilir.
-      </p>
-      <div class="reveal" style="margin-top:18px">
-        <span class="tag toxic">Hulu: Bogor</span>
-        <span class="tag toxic">Hilir: Tangerang/Bekasi</span>
-        <span class="tag">Sumber air baku PDAM</span>
+      <div class="eyebrow reveal">Studi Kasus 2 · Pulau Pari</div>
+      <h2 class="title-lg reveal">Pariwisata, Peluang,<br>&amp; <em>Pergeseran Nilai</em>.</h2>
+
+      <div class="sub-h reveal">Perubahan &amp; Dampak</div>
+      <div class="change-list reveal">
+        <div class="change-item"><span class="arrow">→</span><span>Nelayan &nbsp;→&nbsp; pelaku usaha wisata (homestay, kuliner, jasa)</span></div>
+        <div class="change-item plus"><span class="arrow">✓</span><span>Kesejahteraan meningkat</span></div>
+        <div class="change-item minus"><span class="arrow">✗</span><span>Gotong royong menurun · konflik lahan meningkat</span></div>
       </div>
-      <div class="dialog reveal">
-        "Air di hulu itu titipan buat orang di hilir — bukan tempat sampah
-        yang tinggal di-flush."
-      </div>
-      <div class="speaker reveal">
-        <div class="avatar av-2">B</div>
-        <div class="meta">
-          <b>Prof. Tiur</b>
-          Menjelaskan konteks geografis
-        </div>
+
+      <div class="theory-row reveal">
+        <span class="theory">Teori Konflik</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 4 — CISADANE (AKUT) -->
+<!-- ============ SLIDE 4: KASUS 2 — PULAU PARI (5 Komponen) ============ -->
 <section class="slide" id="slide-4">
   <div class="slide-num">04</div>
-  <div class="split">
-    <div>
-      <div class="eyebrow reveal">Prof. Rafli · Pencemaran Akut</div>
-      <h2 class="title-lg reveal">Cisadane: <em>keracunan</em> dalam semalam.</h2>
-      <p class="body reveal">
-        Kasus besar terjadi <strong>Februari 2026</strong>. Sungai Cisadane tercemar
-        residu kimia beracun akibat <strong>sisa pemadaman kebakaran gudang
-        pestisida</strong> di kawasan BSD. Air pemadam yang bercampur bahan kimia
-        masuk langsung ke aliran sungai — ini definisi pencemaran <em>akut</em>:
-        intens, mendadak, dan instan bikin chaos.
-      </p>
-      <div class="reveal" style="margin-top:18px">
-        <span class="tag toxic">Feb 2026</span>
-        <span class="tag toxic">Gudang pestisida BSD</span>
-        <span class="tag">Residu kimia beracun</span>
-      </div>
-      <div class="dialog reveal">
-        "Pencemaran akut itu kayak serangan jantung buat sungai — terjadi
-        cepat, dan kalau telat ditangani, fatal."
-      </div>
-      <div class="speaker reveal">
-        <div class="avatar av-3">C</div>
-        <div class="meta">
-          <b>Prof. Rafli</b>
-          Membedah kasus Cisadane
-        </div>
-      </div>
-    </div>
-    <div class="visual-panel reveal">
-      <svg class="illustration float-anim" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="240" width="400" height="160" fill="#1c2b27"/>
-        <path d="M0,240 Q100,225 200,240 Q300,255 400,240 L400,400 L0,400 Z" fill="#2a3a30" opacity=".6"/>
-        <!-- warehouse -->
-        <rect x="140" y="120" width="120" height="100" fill="rgba(238,244,242,.08)" stroke="#eef4f2" stroke-width="1.5"/>
-        <polygon points="135,120 200,80 265,120" fill="rgba(245,197,66,.25)" stroke="#f5c542" stroke-width="1.5"/>
-        <!-- fire -->
-        <path d="M180,120 Q170,90 185,75 Q190,95 200,85 Q215,100 205,120 Z" fill="#f5c542" class="pulse-anim"/>
-        <path d="M200,120 Q195,100 207,90 Q210,105 218,98 Q228,110 220,120 Z" fill="#a8451f" class="pulse-anim"/>
-        <!-- skull drum -->
-        <rect x="60" y="180" width="44" height="56" rx="4" fill="#a8451f"/>
-        <circle cx="82" cy="200" r="9" fill="#06100f"/>
-        <text x="82" y="225" text-anchor="middle" fill="#06100f" font-family="JetBrains Mono" font-size="14" font-weight="700">☠</text>
-        <!-- toxic drip into river -->
-        <g fill="#3df5a8">
-          <circle cx="180" cy="250" r="5"/>
-          <circle cx="210" cy="265" r="4"/>
-          <circle cx="240" cy="255" r="5"/>
-        </g>
-        <text x="200" y="320" text-anchor="middle" fill="#3df5a8" font-family="Instrument Serif" font-style="italic" font-size="14">residu kimia → sungai</text>
-      </svg>
-    </div>
+  <div class="eyebrow reveal">Analisis · 5 Komponen Perubahan Sosial</div>
+  <h2 class="title-lg reveal"><em>Pulau Pari</em> — kesejahteraan vs nilai sosial.</h2>
+
+  <div class="components reveal">
+    <div class="h">Komponen</div>
+    <div class="h">Analisis</div>
+
+    <div>Identitas</div>
+    <div>Transformasi ekonomi berbasis wisata</div>
+
+    <div>Level</div>
+    <div>Komunitas lokal — hampir seluruh warga terlibat</div>
+
+    <div>Durasi</div>
+    <div>Menengah – panjang (sejak 2010)</div>
+
+    <div>Besaran</div>
+    <div>Besar — mengubah pekerjaan, nilai, &amp; pola hubungan sosial</div>
+
+    <div>Kecepatan</div>
+    <div>Sedang – cepat — adaptasi dalam waktu relatif singkat</div>
+  </div>
+
+  <div class="insight reveal">
+    "Perubahan ekonomi mampu meningkatkan kesejahteraan,
+    tetapi juga mengubah <em>nilai sosial</em> masyarakat."
   </div>
 </section>
 
-<!-- SLIDE 5 — CILEUNGSI (KRONIS) -->
+<!-- ============ SLIDE 5: KASUS 3 — COVID-19 (Penjelasan) ============ -->
 <section class="slide" id="slide-5">
   <div class="slide-num">05</div>
   <div class="split">
-    <div class="visual-panel reveal">
-      <svg class="illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="black" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1c2b27"/>
-            <stop offset="100%" stop-color="#06100f"/>
-          </linearGradient>
-        </defs>
-        <rect x="0" y="160" width="400" height="240" fill="url(#black)"/>
-        <!-- factory -->
-        <rect x="40" y="80" width="70" height="90" fill="rgba(238,244,242,.08)" stroke="#eef4f2" stroke-width="1.5"/>
-        <rect x="55" y="55" width="14" height="30" fill="rgba(238,244,242,.15)"/>
-        <rect x="82" y="48" width="14" height="37" fill="rgba(238,244,242,.15)"/>
-        <!-- smoke -->
-        <g fill="rgba(238,244,242,.12)" class="float-anim">
-          <circle cx="62" cy="40" r="10"/>
-          <circle cx="89" cy="32" r="12"/>
-        </g>
-        <!-- illegal pipe -->
-        <path d="M110,150 L170,150 L170,200" stroke="#a8451f" stroke-width="8" fill="none"/>
-        <!-- black ooze -->
-        <g fill="#a8451f">
-          <circle cx="170" cy="210" r="6"/>
-          <circle cx="172" cy="228" r="5" opacity=".7"/>
-        </g>
-        <!-- dead fish -->
-        <g fill="rgba(238,244,242,.4)">
-          <ellipse cx="250" cy="230" rx="18" ry="7"/>
-          <polygon points="268,230 280,222 280,238"/>
-          <text x="244" y="226" fill="#06100f" font-family="JetBrains Mono" font-size="8">×</text>
-        </g>
-        <g fill="rgba(238,244,242,.3)">
-          <ellipse cx="310" cy="270" rx="14" ry="5"/>
-          <polygon points="324,270 332,264 332,276"/>
-        </g>
-        <text x="200" y="350" text-anchor="middle" fill="#a8451f" font-family="Instrument Serif" font-style="italic" font-size="14">menghitam · berbau · bertahun-tahun</text>
-      </svg>
-    </div>
     <div>
-      <div class="eyebrow reveal">Prof. Aida · Pencemaran Kronis</div>
-      <h2 class="title-lg reveal">Cileungsi: <em>sekarat</em> pelan tapi pasti.</h2>
-      <p class="body reveal">
-        Beda cerita dengan Cileungsi. Sungai ini secara <strong>kronis</strong>
-        menghitam dan berbau busuk akibat <strong>buangan limbah industri ilegal
-        bertahun-tahun</strong>. Nggak ada ledakan dramatis — tapi justru itu
-        bahayanya: kerusakan numpuk pelan-pelan sampai sungainya basically
-        mati suri dan warga udah "terbiasa" sama baunya.
-      </p>
-      <div class="reveal" style="margin-top:18px">
-        <span class="tag toxic">Limbah industri ilegal</span>
-        <span class="tag toxic">Akumulasi bertahun-tahun</span>
-        <span class="tag">Air hitam &amp; bau</span>
-      </div>
-      <div class="dialog reveal">
-        "Kalau Cisadane serangan jantung, Cileungsi itu penyakit kronis
-        yang didiamkan sampai stadium akhir."
-      </div>
-      <div class="speaker reveal">
-        <div class="avatar av-4">D</div>
-        <div class="meta">
-          <b>Prof. Aida</b>
-          Membedah kasus Cileungsi
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="eyebrow reveal">Studi Kasus 3 · Pandemi COVID-19</div>
+      <h2 class="title-lg reveal">COVID-19 —<br><em>Eksperimen Sosial</em> Terbesar.</h2>
 
-<!-- SLIDE 6 — DAMPAK EKOLOGIS -->
-<section class="slide" id="slide-6">
-  <div class="slide-num">06</div>
-  <div class="eyebrow reveal">Prof. Mahes · Dampak Ekologis</div>
-  <h2 class="title-lg reveal">Ekosistem <em>kolaps</em> — bukan sekadar ikan mati.</h2>
-  <p class="body reveal" style="max-width:72ch">
-    Dampak paling kelihatan: <strong>kematian massal puluhan ton biota akuatik</strong>
-    — ikan patin, nila, sampai sapu-sapu yang biasanya tahan banting pun
-    ikut tumbang. Ini sinyal kalau rantai makanan air udah putus dari akarnya.
-  </p>
-  <div class="stat-row reveal">
-    <div class="stat">
-      <div class="num">±10⁺</div>
-      <div class="lbl">Ton biota mati</div>
-    </div>
-    <div class="stat">
-      <div class="num">3+</div>
-      <div class="lbl">Spesies tumbang</div>
-    </div>
-    <div class="stat">
-      <div class="num">~0</div>
-      <div class="lbl">Oksigen terlarut</div>
-    </div>
-  </div>
-  <div class="split-3">
-    <div class="card reveal" data-num="01">
-      <h4>Rantai makanan putus</h4>
-      <p>Ikan mati → predator &amp; burung air kehilangan sumber pangan.
-      Efeknya naik ke seluruh ekosistem riparian.</p>
-    </div>
-    <div class="card reveal" data-num="02">
-      <h4>Indikator polusi ekstrem</h4>
-      <p>Sapu-sapu dikenal super tahan polutan. Kalau dia aja mati,
-      artinya kadar racun udah off the charts.</p>
-    </div>
-    <div class="card reveal" data-num="03">
-      <h4>Pemulihan lama</h4>
-      <p>Sedimen dasar sungai menyimpan racun. Recovery ekosistem
-      bisa makan waktu bertahun-tahun, bukan minggu.</p>
-    </div>
-  </div>
-  <div class="speaker reveal">
-    <div class="avatar av-5">E</div>
-    <div class="meta">
-      <b>Prof. Mahes</b>
-      Menjelaskan dampak ekologis
-    </div>
-  </div>
-</section>
+      <div class="sub-h reveal">Perubahan yang Terjadi</div>
+      <div class="change-list reveal">
+        <div class="change-item"><span class="arrow">→</span><span>Sekolah daring &nbsp;·&nbsp; Work From Home</span></div>
+        <div class="change-item"><span class="arrow">→</span><span>Ibadah daring &nbsp;·&nbsp; belanja online melonjak</span></div>
+        <div class="change-item"><span class="arrow">→</span><span>Interaksi tatap muka &nbsp;→&nbsp; digital</span></div>
+      </div>
 
-<!-- SLIDE 7 — DAMPAK SOSIAL -->
-<section class="slide" id="slide-7">
-  <div class="slide-num">07</div>
-  <div class="split">
-    <div>
-      <div class="eyebrow reveal">Prof. Ayes · Dampak Sosial</div>
-      <h2 class="title-lg reveal">Keran mati untuk <em>ratusan ribu</em> warga.</h2>
-      <p class="body reveal">
-        Krisis ini nggak berhenti di ikan. <strong>Distribusi air bersih PDAM
-        lumpuh</strong> karena air baku udah nggak aman dikonsumsi. Artinya
-        <strong>ratusan ribu warga</strong> di Tangerang dan Bekasi mendadak kehilangan
-        akses air layak — mandi, masak, minum semua kena.
-      </p>
-      <div class="dialog reveal">
-        "Pas keran mati, baru semua orang sadar: air bersih itu bukan
-        default setting, itu privilege yang bisa hilang."
-      </div>
-      <p class="body reveal" style="margin-top:18px">
-        Beban tambahan: warga harus beli air galon/tangki, ekonomi rumah
-        tangga tertekan, dan potensi penyakit bawaan air naik. Ini
-        contoh nyata krisis lingkungan langsung jadi <em>krisis kemanusiaan.</em>
-      </p>
-      <div class="speaker reveal">
-        <div class="avatar av-6">F</div>
-        <div class="meta">
-          <b>Prof. Ayes</b>
-          Menjelaskan dampak sosial
-        </div>
+      <div class="theory-row reveal">
+        <span class="theory">Fungsionalisme</span>
+        <span class="theory alt">Moving Equilibrium</span>
       </div>
     </div>
+
     <div class="visual-panel reveal">
       <svg class="illustration float-anim" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-        <!-- faucet -->
-        <rect x="150" y="80" width="20" height="80" fill="rgba(238,244,242,.5)"/>
-        <path d="M170,90 L240,90 L240,130" stroke="rgba(238,244,242,.5)" stroke-width="20" fill="none"/>
-        <!-- single sad drop -->
-        <ellipse cx="240" cy="160" rx="7" ry="11" fill="#3df5a8"/>
-        <!-- empty bucket -->
-        <path d="M200,260 L280,260 L270,360 L210,360 Z" fill="none" stroke="#eef4f2" stroke-width="2" opacity=".6"/>
-        <line x1="200" y1="260" x2="280" y2="260" stroke="#eef4f2" stroke-width="2" opacity=".6"/>
-        <text x="240" y="320" text-anchor="middle" fill="rgba(238,244,242,.4)" font-family="Instrument Serif" font-style="italic" font-size="14">kosong</text>
-        <!-- people icons -->
-        <g fill="#f5c542">
-          <circle cx="70" cy="280" r="10"/><rect x="60" y="293" width="20" height="30" rx="5"/>
-          <circle cx="105" cy="280" r="10"/><rect x="95" y="293" width="20" height="30" rx="5"/>
-          <circle cx="140" cy="280" r="10"/><rect x="130" y="293" width="20" height="30" rx="5"/>
+        <!-- laptop -->
+        <rect x="80" y="90" width="240" height="150" rx="6" fill="#1a2030" stroke="#f0ece2" stroke-width="1.5"/>
+        <rect x="90" y="100" width="220" height="130" fill="#0a0f1a"/>
+        <path d="M65,240 L335,240 L350,260 L50,260 Z" fill="#2a3548"/>
+        <!-- video call grid -->
+        <g>
+          <rect x="100" y="110" width="60" height="50" fill="#2a6b8c" opacity=".5"/>
+          <circle cx="130" cy="130" r="9" fill="#e8b04a"/>
+          <rect x="118" y="142" width="24" height="12" rx="3" fill="#e8b04a"/>
+
+          <rect x="170" y="110" width="60" height="50" fill="#7a9c6e" opacity=".5"/>
+          <circle cx="200" cy="130" r="9" fill="#f0ece2"/>
+          <rect x="188" y="142" width="24" height="12" rx="3" fill="#f0ece2"/>
+
+          <rect x="240" y="110" width="60" height="50" fill="#d96c52" opacity=".5"/>
+          <circle cx="270" cy="130" r="9" fill="#f0ece2"/>
+          <rect x="258" y="142" width="24" height="12" rx="3" fill="#f0ece2"/>
+
+          <rect x="100" y="170" width="60" height="50" fill="#6b4575" opacity=".5"/>
+          <circle cx="130" cy="190" r="9" fill="#f0ece2"/>
+          <rect x="118" y="202" width="24" height="12" rx="3" fill="#f0ece2"/>
+
+          <rect x="170" y="170" width="60" height="50" fill="#e8b04a" opacity=".5"/>
+          <circle cx="200" cy="190" r="9" fill="#0a0f1a"/>
+          <rect x="188" y="202" width="24" height="12" rx="3" fill="#0a0f1a"/>
+
+          <rect x="240" y="170" width="60" height="50" fill="#2a6b8c" opacity=".5"/>
+          <circle cx="270" cy="190" r="9" fill="#f0ece2"/>
+          <rect x="258" y="202" width="24" height="12" rx="3" fill="#f0ece2"/>
         </g>
-        <text x="105" y="350" text-anchor="middle" fill="#eef4f2" font-family="JetBrains Mono" font-size="10">300K+ WARGA</text>
+        <!-- virus -->
+        <g transform="translate(60,330)">
+          <circle r="18" fill="#d96c52"/>
+          <g stroke="#d96c52" stroke-width="2">
+            <line x1="0" y1="-18" x2="0" y2="-26"/>
+            <line x1="0" y1="18" x2="0" y2="26"/>
+            <line x1="-18" y1="0" x2="-26" y2="0"/>
+            <line x1="18" y1="0" x2="26" y2="0"/>
+            <line x1="-13" y1="-13" x2="-19" y2="-19"/>
+            <line x1="13" y1="-13" x2="19" y2="-19"/>
+            <line x1="-13" y1="13" x2="-19" y2="19"/>
+            <line x1="13" y1="13" x2="19" y2="19"/>
+          </g>
+        </g>
+        <text x="340" y="340" text-anchor="end" fill="rgba(240,236,226,.6)" font-family="Instrument Serif" font-style="italic" font-size="14">interaksi → digital</text>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 8 — RESPONS DARURAT + HUKUM -->
-<section class="slide" id="slide-8">
-  <div class="slide-num">08</div>
-  <div class="eyebrow reveal">Prof. Nisrina · Respons Darurat &nbsp;·&nbsp; Prof. Jule · Penegakan Hukum</div>
-  <h2 class="title-lg reveal">Dua jalur penanganan: <em>obati</em> &amp; <em>tindak</em>.</h2>
-  <p class="body reveal" style="max-width:70ch">
-    Respons dibagi dua track yang jalan barengan: mitigasi cepat buat
-    "ngerem" kerusakan, dan penegakan hukum biar nggak kejadian lagi.
-  </p>
-  <div class="split-3">
-    <div class="card reveal" data-num="01">
-      <h4>Mitigasi Organik</h4>
-      <p>BPBD bersama relawan menuangkan <strong>ribuan liter eco-enzyme</strong>
-      ke aliran sungai untuk menetralisir racun kimia secara organik
-      dan mempercepat pemulihan mikroba air.</p>
-    </div>
-    <div class="card reveal" data-num="02">
-      <h4>Segel &amp; Audit</h4>
-      <p>KLH &amp; DLH <strong>menyegel perusahaan pelanggar</strong> serta melakukan
-      audit lingkungan ketat di sepanjang bantaran sungai industri.</p>
-    </div>
-    <div class="card reveal" data-num="03">
-      <h4>Efek Jera</h4>
-      <p>Penindakan tegas jadi sinyal ke pelaku industri lain: buang
-      limbah ilegal = bisnis di-shutdown. Pencegahan &gt; pengobatan.</p>
-    </div>
+<!-- ============ SLIDE 6: KASUS 3 — COVID-19 (5 Komponen) ============ -->
+<section class="slide" id="slide-6">
+  <div class="slide-num">06</div>
+  <div class="eyebrow reveal">Analisis · 5 Komponen Perubahan Sosial</div>
+  <h2 class="title-lg reveal"><em>COVID-19</em> — perubahan global, kecepatan ekstrem.</h2>
+
+  <div class="components reveal">
+    <div class="h">Komponen</div>
+    <div class="h">Analisis</div>
+
+    <div>Identitas</div>
+    <div>Digitalisasi interaksi sosial</div>
+
+    <div>Level</div>
+    <div>Global hingga individu</div>
+
+    <div>Durasi</div>
+    <div>Menengah, namun berdampak panjang</div>
+
+    <div>Besaran</div>
+    <div>Sangat besar — menyentuh pendidikan, ekonomi, agama, keluarga</div>
+
+    <div>Kecepatan</div>
+    <div>Sangat cepat — adaptasi dalam hitungan minggu</div>
   </div>
-  <div class="dialog reveal" style="margin-top:24px">
-    "Eco-enzyme itu first aid-nya. Tapi tanpa penegakan hukum, kita cuma
-    ngepel lantai sambil keran bocornya dibiarin nyala."
-  </div>
-  <div style="display:flex; gap:14px; margin-top:20px; flex-wrap:wrap" class="reveal">
-    <div class="speaker" style="margin-top:0">
-      <div class="avatar av-7">G</div>
-      <div class="meta">
-        <b>Prof. Nisrina</b>
-        Menjelaskan respons darurat
-      </div>
-    </div>
-    <div class="speaker" style="margin-top:0">
-      <div class="avatar av-8">H</div>
-      <div class="meta">
-        <b>Prof.Jule</b>
-        Menjelaskan penegakan hukum
-      </div>
-    </div>
+
+  <div class="insight reveal">
+    "Pandemi menunjukkan bahwa perubahan sosial dapat terjadi
+    secara <em>tiba-tiba</em> dan berskala global."
   </div>
 </section>
 
-<!-- SLIDE 9 — SINTESIS & PENUTUP -->
-<section class="slide" id="slide-9">
-  <div class="slide-num">09</div>
-  <div class="eyebrow reveal">Prof. Dandy · Sintesis &amp; Penutup</div>
-  <h2 class="title-lg reveal">Benang merah: <em>akut</em> vs <em>kronis</em>, satu solusi.</h2>
+<!-- ============ SLIDE 7: PENUTUP — PERBANDINGAN ============ -->
+<section class="slide" id="slide-7">
+  <div class="slide-num">07</div>
+  <div class="eyebrow reveal">Penutup · Sintesis</div>
+  <h2 class="title-lg reveal">Perbandingan <em>Tiga</em> Studi Kasus.</h2>
 
   <div class="compare reveal">
-    <div class="h">Aspek</div>
-    <div class="h">Cisadane (Akut)</div>
-    <div class="h">Cileungsi (Kronis)</div>
+    <div class="h">Kasus</div>
+    <div class="h">Faktor Pendorong</div>
+    <div class="h">Teori</div>
 
-    <div>Pemicu</div>
-    <div class="akut">Residu pemadaman gudang pestisida</div>
-    <div class="kronis">Limbah industri ilegal bertahun-tahun</div>
+    <div class="case-name">Juwana</div>
+    <div>Teknologi (kapal modern)</div>
+    <div>Materialisme Historis</div>
 
-    <div>Kecepatan</div>
-    <div class="akut">Mendadak, dalam semalam</div>
-    <div class="kronis">Lambat, terakumulasi diam-diam</div>
+    <div class="case-name">Pulau Pari</div>
+    <div>Ekonomi pariwisata</div>
+    <div>Teori Konflik</div>
 
-    <div>Dampak</div>
-    <div class="akut">Biota mati massal · air baku tercemar</div>
-    <div class="kronis">Sungai menghitam · ekosistem mati suri</div>
-
-    <div>Penanganan</div>
-    <div class="akut">Eco-enzyme · mitigasi BPBD</div>
-    <div class="kronis">Segel pabrik · audit KLH/DLH</div>
+    <div class="case-name">COVID-19</div>
+    <div>Krisis kesehatan</div>
+    <div>Fungsionalisme · Moving Equilibrium</div>
   </div>
 
-  <div class="dialog reveal" style="margin-top:24px;font-size:clamp(18px,1.8vw,24px)">
-    "Akut atau kronis, akarnya sama: limbah yang nggak bertanggung jawab.
-    <strong>Mitigasi mengobati, hukum mencegah — tapi kesadaran kita yang bikin
-    sungai punya masa depan.</strong>"
-  </div>
-
-  <div class="speaker reveal">
-    <div class="avatar av-9">I</div>
-    <div class="meta">
-      <b>Prof. Dandy</b>
-      Menyusun sintesis &amp; menutup
-    </div>
+  <div class="insight reveal">
+    "Ketiga kasus menunjukkan bahwa perubahan sosial dapat berasal
+    dari <em>sumber yang berbeda</em>, tetapi semuanya mengubah
+    struktur, pola interaksi, dan nilai masyarakat — <em>masyarakat
+    selalu dinamis</em>."
   </div>
 
   <div class="signature reveal">
@@ -1030,15 +853,19 @@ html,body{
 <script>
 let scene, camera, renderer, particles, ring, ring2, torus, torus2;
 const slideHues = [
-  [0.24,0.96,0.66],[0.36,0.55,0.43],[0.36,0.55,0.43],
-  [0.66,0.27,0.12],[0.66,0.27,0.12],[0.43,0.76,0.55],
-  [0.96,0.77,0.26],[0.43,0.76,0.55],[0.18,0.49,0.36]
+  [0.91,0.69,0.29],  // 1 juwana amber
+  [0.91,0.69,0.29],  // 2 juwana
+  [0.48,0.61,0.43],  // 3 pari sage
+  [0.48,0.61,0.43],  // 4 pari
+  [0.42,0.27,0.46],  // 5 covid plum
+  [0.42,0.27,0.46],  // 6 covid
+  [0.91,0.69,0.29]   // 7 closing amber
 ];
 
 function initThree(){
   const canvas = document.getElementById('three-canvas');
   scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x06100f, 0.0014);
+  scene.fog = new THREE.FogExp2(0x0a0f1a, 0.0014);
   camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 2000);
   camera.position.set(0,0,160);
   renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
@@ -1055,33 +882,33 @@ function initThree(){
   }
   pGeo.setAttribute('position', new THREE.BufferAttribute(positions,3));
   const pMat = new THREE.PointsMaterial({
-    color:0x3df5a8, size:1.6, transparent:true, opacity:0.6,
+    color:0xe8b04a, size:1.6, transparent:true, opacity:0.6,
     sizeAttenuation:true, blending:THREE.AdditiveBlending, depthWrite:false
   });
   particles = new THREE.Points(pGeo, pMat);
   scene.add(particles);
 
   const tGeo = new THREE.TorusKnotGeometry(60, 1.4, 220, 16, 2, 3);
-  const tMat = new THREE.MeshBasicMaterial({color:0x3df5a8, wireframe:true, transparent:true, opacity:0.20});
+  const tMat = new THREE.MeshBasicMaterial({color:0xe8b04a, wireframe:true, transparent:true, opacity:0.20});
   torus = new THREE.Mesh(tGeo, tMat);
   torus.position.set(180, 30, -120);
   scene.add(torus);
 
   const t2Geo = new THREE.TorusGeometry(120, 1, 8, 100);
-  const t2Mat = new THREE.MeshBasicMaterial({color:0x1e6b6b, transparent:true, opacity:0.15, wireframe:true});
+  const t2Mat = new THREE.MeshBasicMaterial({color:0x2a6b8c, transparent:true, opacity:0.15, wireframe:true});
   torus2 = new THREE.Mesh(t2Geo, t2Mat);
   torus2.position.set(-220, -40, -180);
   torus2.rotation.x = 1.2;
   scene.add(torus2);
 
   const rGeo = new THREE.RingGeometry(28, 30, 64);
-  const rMat = new THREE.MeshBasicMaterial({color:0x3df5a8, side:THREE.DoubleSide, transparent:true, opacity:0.4});
+  const rMat = new THREE.MeshBasicMaterial({color:0xe8b04a, side:THREE.DoubleSide, transparent:true, opacity:0.4});
   ring = new THREE.Mesh(rGeo, rMat);
   ring.position.set(-260, 60, -50);
   scene.add(ring);
 
   const r2Geo = new THREE.RingGeometry(14, 15, 48);
-  const r2Mat = new THREE.MeshBasicMaterial({color:0xeef4f2, side:THREE.DoubleSide, transparent:true, opacity:0.3});
+  const r2Mat = new THREE.MeshBasicMaterial({color:0xf0ece2, side:THREE.DoubleSide, transparent:true, opacity:0.3});
   ring2 = new THREE.Mesh(r2Geo, r2Mat);
   ring2.position.set(280, -80, -30);
   scene.add(ring2);
@@ -1096,7 +923,7 @@ function initThree(){
 
 let t = 0;
 let targetCamX = 0, targetCamY = 0, currentCamX = 0, currentCamY = 0;
-let targetColor = new THREE.Color(0x3df5a8);
+let targetColor = new THREE.Color(0xe8b04a);
 let mouseX = 0, mouseY = 0;
 
 window.addEventListener('mousemove', (e)=>{
@@ -1135,7 +962,7 @@ function setSlideTheme(idx){
   const hue = slideHues[idx];
   if(!hue) return;
   targetColor = new THREE.Color(hue[0], hue[1], hue[2]);
-  targetCamX = (idx-4) * 18;
+  targetCamX = (idx-3) * 18;
   targetCamY = Math.sin(idx*0.7) * 12;
 }
 
